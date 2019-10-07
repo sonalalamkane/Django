@@ -1,5 +1,7 @@
 from django import forms
-from notes.models import Note, Tag
+from .models import Note, Tag
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 
 class NoteForm(forms.ModelForm):
@@ -12,3 +14,6 @@ class TagForm(forms.ModelForm):
     class Meta:
         model = Tag
         fields = ('label',)
+
+
+
