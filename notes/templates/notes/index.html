@@ -32,7 +32,7 @@
     <ul>
         {% if tags %}
             {% for tag in tags %}
-            <li><a href="{% url 'notes:search' slug=tag.slug %}">{{tag.label}}</a></li>
+                 <li><a href="{% url 'notes:search'   %}">{{ tag.label }}</a></li>
             {% endfor %}
         {% else %}
             <div class='alert alert-warning'>No tags yet!</div>

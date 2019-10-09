@@ -6,7 +6,7 @@
     <h1 align='center'>Notes!</h1>
 </div>
 
-{% if submitbutton == 'Search' and request.GET.q != '' %}
+{% if request.GET.q != '' %}
     {% if results %}
         <h1>Results for <b>{{ request.GET.q }}</b></h1>
         <br/><br/>

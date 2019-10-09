@@ -37,7 +37,11 @@ def add_note(request):
 
         form = NoteForm(request.POST, instance=note)
         if form.is_valid():
-            form.save()
+            sl = form.save(commit=False)
+            sl.user = request.user
+            sl.save()
+
+            # form.save()
             messages.add_message(request, messages.INFO, 'Note Added!')
             return HttpResponseRedirect(reverse('notes:index'))
 
